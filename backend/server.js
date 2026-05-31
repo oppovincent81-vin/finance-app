@@ -4,7 +4,6 @@ import { getDb } from './database.js';
 import importRouter from './routes/import.js';
 
 const app = express();
-const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
