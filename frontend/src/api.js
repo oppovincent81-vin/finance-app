@@ -1,11 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  'https://finance-app-juzn.onrender.com/api';
-
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: 'https://finance-app-juzn.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
