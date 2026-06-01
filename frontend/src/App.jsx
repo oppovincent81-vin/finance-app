@@ -33,7 +33,9 @@ function Layout({ children }) {
           <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
-                <span className="text-xl font-bold text-indigo-600">💰 FinanceTracker</span>
+                <span className="text-lg sm:text-xl font-bold text-indigo-600">
+  💰 FinanceTracker
+</span>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 {navItems.map(item => (
@@ -49,14 +51,45 @@ function Layout({ children }) {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-500">{currentMonth} {currentYear}</span>
+              <span className="hidden sm:block text-sm text-gray-500">
+  {currentMonth} {currentYear}
+</span>
             </div>
           </div>
         </div>
       </nav>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24">
         {children}
       </main>
+      {/* Mobile Bottom Navigation */}
+<div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg sm:hidden z-50">
+  <div className="grid grid-cols-5">
+    <Link to="/" className="flex flex-col items-center py-2">
+      <span>📊</span>
+      <span className="text-xs">Home</span>
+    </Link>
+
+    <Link to="/transactions" className="flex flex-col items-center py-2">
+      <span>💰</span>
+      <span className="text-xs">Txns</span>
+    </Link>
+
+    <Link to="/budget" className="flex flex-col items-center py-2">
+      <span>📉</span>
+      <span className="text-xs">Budget</span>
+    </Link>
+
+    <Link to="/networth" className="flex flex-col items-center py-2">
+      <span>📈</span>
+      <span className="text-xs">Worth</span>
+    </Link>
+
+    <Link to="/import" className="flex flex-col items-center py-2">
+      <span>📥</span>
+      <span className="text-xs">Import</span>
+    </Link>
+  </div>
+</div>
     </div>
   );
 }
