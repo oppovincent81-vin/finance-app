@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',      // Allows access from other devices on the network
-    port: 3000,            // Frontend port
+    port: 10000,            // Frontend port
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',   // Backend server URL
+        target: 'https://finance-app-juzn.onrender.com',   // Backend server URL
         changeOrigin: true,
         secure: false,
       }
